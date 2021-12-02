@@ -24,7 +24,7 @@ class _RegisterState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appbar(context, 'Register'),
+      appBar: appbar(context, 'Login'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -46,7 +46,7 @@ class _RegisterState extends State<Login> {
               SizedBox(height: 10,),
               GestureDetector(
                 onTap: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Home()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Register()));
                 },
                   child: text('Do not have an account? Sign up', 16)),
             ],

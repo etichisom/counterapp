@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:inter/bloc/counter.dart';
+import 'package:inter/ui/login.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
@@ -40,10 +41,10 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
               onTap: (){
-                FirebaseAuth.instance.signOut()
-                    .then((value){
-                 // Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Home()));
-                });
+                FirebaseAuth.instance.signOut();
+
+                Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Login()));
+
               },
                 child: Icon(Icons.logout)),
           )
