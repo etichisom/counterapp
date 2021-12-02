@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "555546904527",
+    "project_id": "designshop-5f8d1",
+    "storage_bucket": "designshop-5f8d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555546904527:android:b18d74e778940961df34ba",
+        "android_client_info": {
+          "package_name": "com.example.inter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555546904527-0c6ilqgpvjbogg9l0vqr3gdeig74ck25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUk8q1lnqTA_EX8qUElCYR50NDZaYiz34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555546904527-0c6ilqgpvjbogg9l0vqr3gdeig74ck25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
