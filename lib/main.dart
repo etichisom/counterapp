@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:inter/bloc/counter.dart';
+import 'package:inter/bloc/pagebloc.dart';
 import 'package:inter/component/text.dart';
 import 'package:inter/ui/home.dart';
 import 'package:inter/ui/login.dart';
@@ -13,11 +14,17 @@ void main() async{
   await Firebase.initializeApp();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => Counterbloc()),
+    ChangeNotifierProvider(create: (_) => Pagebloc()),
   ],
   child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
+ @override
+  StatelessElement createElement() {
+    // TODO: implement createElement
+    return super.createElement();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,31 +35,21 @@ class MyApp extends StatelessWidget {
       home:Splash()
     );
   }
-}class Splash extends StatefulWidget {
-
-  @override
-  State<Splash> createState() => _SplashState();
 }
+class Splash extends StatelessWidget {
 
-class _SplashState extends State<Splash> {
-  BuildContext cu;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Future.delayed(Duration(seconds: 2),(){
-      if(FirebaseAuth.instance.currentUser==null){
-        Navigator.pushReplacement(cu,MaterialPageRoute(builder:(context)=>Login()));
-      }else{
-        Navigator.pushReplacement(cu,MaterialPageRoute(builder:(context)=>Home()));
-      }
-    });
-  }
   @override
   Widget build(BuildContext context) {
-    cu=context;
+    Future.delayed(Duration(seconds: 2),(){
+      if(FirebaseAuth.instance.currentUser==null){
+        Navigator.pushReplacement(context,MaterialPageRoute(builder:(context)=>Login()));
+      }else{
+        Navigator.pushReplacement(context,MaterialPageRoute(builder:(context)=>Home()));
+      }
+    });
     return Scaffold(
       body: Center(child: text('counter', 30)),
     );
   }
 }
+
